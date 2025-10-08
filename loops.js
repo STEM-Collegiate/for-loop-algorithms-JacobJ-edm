@@ -10,51 +10,138 @@ const testArrays = [
 
 
 
-function sumArray(arr){
+function sumArray(arr) {
     let total = 0;
-    for(val of arr){
+    for (val of arr) {
         total += val;
     }
-    console.log("The sum total is: ", total);
+    console.log(total);
     return total;
 }
 
-function meanArray(arr){
+function meanArray(arr) {
+    let total = sumArray(arr);
+    let mean = total / arr.length;
+    console.log(mean);
+    return mean;
 }
 
-function doubleArray(arr){
+function doubleArray(arr) {
+    let newDoubleArr = [];
+    for (val of arr) {
+        newDoubleArr.push(val * 2);
+    }
+    console.log(newDoubleArr);
+    return newDoubleArr;
 }
 
-function squareArray(arr){
+function squareArray(arr) {
+    let newSquareArr = [];
+    for (val of arr) {
+        newSquareArr.push(val * val);
+    }
+    console.log(newSquareArr);
+    return newSquareArr;
 }
 
-function minValue(arr){
+function minValue(arr) {
+    let min = arr[0];
+    for (val of arr) {
+        if (val < min) {
+            min = val;
+        }
+    }
+    console.log(min);
+    return min;
 }
 
-function maxValue(arr){
+function maxValue(arr) {
+    let max = arr[0];
+    for (val of arr) {
+        if (val > max) {
+            max = val;
+        }
+    }
+    console.log(max);
+    return max;
+
 }
 
-function countEvens(arr){
+function countEvens(arr) {
+    let countEvens = 0;
+    for (val of arr) {
+        if (val % 2 === 0) {
+            countEvens++;
+        }
+    }
+    console.log(countEvens);
+    return countEvens;
 }
 
-function countPositives(arr){
+function countPositives(arr) {
+    let countPositives = 0;
+    for (val of arr) {
+        if (val > 0) {
+            countPositives++;
+        }
+    }
+    console.log(countPositives);
+    return countPositives;
 }
 
-function filterOdds(arr){
+function filterOdds(arr) {
+    let filterOdds = [];
+    for (val of arr) {
+        if (val % 2 != 0) {
+            filterOdds.push(val);
+            console.log(filterOdds);
+
+        }
+    }
+    return filterOdds;
 }
 
-function filterNegatives(arr){
+function filterNegatives(arr) {
+    let filterNegatives = [];
+    for (val of arr) {
+        if (val < 0) {
+            filterNegatives.push(val);
+            console.log(filterNegatives);
+        }
+    }
+    return filterNegatives;
 }
-
-function negativeExists(arr){
+function negativeExists(arr) {
+    for (val of arr) {
+        if (val < 0) {
+            return true;
+        }
+    }
+    return false;
 }
-
-function firstEvenNumber(arr){
+function firstEvenNumber(arr) {
+    for (val of arr) {
+        if (val % 2 === 0) {
+            return val;
+        }
+    }
+    return null;
 }
+function allElementsPositive(arr) {
+    for (val of arr) {
+        if (val <= 0) {
+            return false;
 
-function allElementsPositive(arr){
+        }
+    }
+    return true;
+
 }
-
-function allElementsDefined(arr){
+function allElementsDefined(arr) {
+    for (val of arr) {
+        if (val == null || val == undefined) {
+            return false;
+        }
+    }
+    return true;
 }
-
